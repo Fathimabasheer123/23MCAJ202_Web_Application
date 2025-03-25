@@ -1,4 +1,4 @@
-/* Apply a background color and center the form in the viewport */
+/* Set background color and center the form in the viewport */
 body {
     background-color: whitesmoke;
     display: flex;
@@ -52,7 +52,7 @@ button {
     cursor: pointer;
 }
 
-/* Styling for error messages (hidden by default) */
+/* Styling for error messages */
 .error {
     font-size: 12px;
     color: red;
