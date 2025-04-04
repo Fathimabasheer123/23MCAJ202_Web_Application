@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symmetric Matrix</title>
+    <style>
+        button{
+            background-color: blue;
+        }
+    </style>
+    <script>
+        // Function to check if a matrix is symmetric
+        function Symmetric(matrix) {
+            const rows = matrix.length;
+            const cols = matrix[0].length;
+
+            // If the matrix is not square, it cannot be symmetric
+            if (rows !== cols) {
+                return false;
+            }
+
+            // Iterate through the matrix
+            let i, j;
+            for (i = 0; i < rows; i++) {
+                for (j = i; j < cols; j++) { // Loop through columns starting from diagonal element
+                    // Check if the matrix[i][j] is equal to matrix[j][i]
+                    if (matrix[i][j] !== matrix[j][i]) {
+                        return false; // If any element is not equal, the matrix is not symmetric
+                    }
+                }
+            }
+            return true; // If all conditions pass, the matrix is symmetric
+        }
+
+        // Function to read the matrix input from the user
+        function readMatrix() {
+            const n = parseInt(document.getElementById('size').value, 10); // Get matrix size from input
+            const matrix = [];
+            
+            // Loop to read each row of the matrix
+            for (let i = 0; i < n; i++) {
+                const rowInput = document.getElementById(`row${i + 1}`).value;
+                let row = rowInput.split(' ').map(Number); // Split row into numbers
+                matrix.push(row); // Add the row to the matrix
+            }
+            return matrix;
+        }
+
+        // Main function that controls the flow of the program
+        function main() {
+            const matrix = readMatrix();  // Get the matrix from user input
+
+            // Check if the matrix is symmetric and show an alert based on the result
+            if (Symmetric(matrix)) {
+                alert("The matrix is symmetric.");
+            } else {
+                alert("The matrix is not symmetric.");
+            }
+        }
+
+        // Function to update matrix input fields dynamically based on size
+        function updateMatrixInputs() {
+            const n = parseInt(document.getElementById('size').value, 10);
+            const matrixContainer = document.getElementById('matrixEntries');
+            matrixContainer.innerHTML = ''; // Clear previous rows
+
+            // Create input fields for each row
+            for (let i = 0; i < n; i++) {
+                const rowInput = document.createElement('input');
+                rowInput.type = 'text';
+                rowInput.id = `row${i + 1}`;
+                rowInput.placeholder = `Enter row ${i + 1} (space-separated values)`;
+                matrixContainer.appendChild(rowInput);
+                matrixContainer.appendChild(document.createElement('br'));
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Matrix Symmetry Checker</h1>
+    
+    <!-- Input to enter matrix size -->
+    <label for="size">Enter the size of the matrix (n x n):</label>
+    <input type="number" id="size" placeholder="Enter size of matrix" min="1" step="1" onchange="updateMatrixInputs()" required><br><br>
+    
+    <!-- Container to dynamically show input fields for matrix rows -->
+    <div id="matrixEntries"></div><br>
+    
+    <!-- Button to trigger the main function when clicked -->
+    <button onclick="main()">Check Symmetry</button>
+</body>  
+</html>

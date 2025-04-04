@@ -1,0 +1,12 @@
+h2{
+    color:darkblue;
+    font-size: 30px;
+}
+label{
+    font-size: 20px;
+}
+input{
+    padding: 10px;
+    width:100%;
+    box-sizing: border-box;
+}

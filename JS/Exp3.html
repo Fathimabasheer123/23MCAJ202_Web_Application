@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Hover</title>
+    <style>
+        /* Styling for the body */
+        body {
+            background-color:antiquewhite;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        /* Styling for the initial content */
+        #original{
+            background-color:rosybrown;
+            color:white;
+            display: inline-block;
+            padding: 20px;
+            border: 2px solid;
+            cursor: pointer;
+
+        }
+        /* Styling for the image */
+        img {
+            width: 400px;
+            height: 300px;
+            display: block;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <h2></h2>
+ <!-- div where the text and image will be displayed -->
+    <div id="original">
+        <h2 id="text">Hover over the Image!</h2>
+        <p></p>
+        <img id="image" src="image1.jpg" alt="Default Image">
+    </div>
+
+
+    <script>
+        const original = document.getElementById('original');
+        const image = document.getElementById('image');
+
+    // Event listener for when the mouse hovers over the div
+    original.addEventListener('mouseover',function (){
+        image.src = 'image2.jpg';  
+        document.getElementById('text').innerText = 'You are admiring a beautiful flower!';
+    });
+
+    // Event listener for when the mouse leaves the div
+       original.addEventListener('mouseout', function(){
+        image.src = 'image1.jpg'; 
+        document.getElementById('text').innerText= 'Hover over the Image!';
+    });
+    </script>
+
+</body>
+</html>

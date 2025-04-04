@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <style>
+        body {
+            background-color:whitesmoke;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            height: 100vh;
+        }
+       form {
+            padding: 10px;
+            background-color: white;
+            font-weight: bold;
+            border-radius: 15px;
+            width: 400px;
+        }
+        button {
+            background-color:darkblue;
+            color: white;
+            font-size: 30px;
+            width: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="./regform.css">
+</head>
+<body>
+    <form>
+        <h2>Registration Form</h2>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname"><br><br>
+        <label for="email">Email Address:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

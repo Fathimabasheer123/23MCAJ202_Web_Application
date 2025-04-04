@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment form</title>
+</head>
+<style>
+    /* Set background color and center content vertically and horizontally */
+    body {
+        background-color: mintcream;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    
+    /* style for the main heading */
+    h2 {
+        color: cadetblue;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* style for labels */
+    label {
+        color: cadetblue;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    /* Style for the input and textarea */
+    input,
+    textarea {
+        padding: 5px;
+        width: 100%;
+    }
+
+    /* Style for the butttons */
+    button {
+        background-color: cadetblue;
+        color: white;
+        font-size: 20px;
+        width: 37%;
+    }
+
+    /* Cointainer for the form */
+    .container {
+        background-color: white;
+        border: 3px solid cadetblue;
+        padding: 50px;
+    }
+</style>
+<form>
+    <div class="container">
+        <!-- Main heading -->
+        <h2>Add your comments:</h2>
+        <!-- Username input field -->
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
+        <!-- Email input field -->
+        <label for="ename">Email:</label><br>
+        <input type="email" id="ename" name="email" placeholder="Enter your email" required><br><br>
+        <!-- Comment input field -->
+        <label for="comment">Comment:</label><br>
+        <textarea id="comment" name="comment" placeholder="Enter your comment" rows="10" cols="50"
+            required></textarea><br><br>
+        <!-- Submit button -->
+        <button type="submit">Submit</button>
+</form>
+</div>
+</body>
+</html>

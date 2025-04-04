@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color</title>
+    <style>
+        /* Styling for the body */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Styling for the p */
+        p {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        /* Styling for the container */
+        .container {
+            height: 300px;
+            width: 350px;
+            background-color: rgb(37, 136, 136);
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        /* Styling for the button */
+        button {
+            background-color: rgb(36, 182, 167);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            /* corrected margin */
+            padding: 10px 50px;
+            border-radius: 5px;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Container for the content -->
+    <div class="container">
+        <h2>Welcome to my webpage!</h2>
+        <p>Explore this page and customize your own background color with just a click!</p>
+        <button id="button">Change color</button>        
+    </div>
+
+    <script>
+        // Get the button element using its ID
+        const button = document.getElementById("button");
+        button.addEventListener("click", Changecolor);
+        // Function to chage the background color
+        function Changecolor() {
+            //Generate a random hex color code
+            let randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16); 
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+</body>
+
+</html>
