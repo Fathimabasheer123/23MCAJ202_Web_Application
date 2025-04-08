@@ -1,0 +1,47 @@
+/*  Styling  for the body*/
+body {
+    background-color: whitesmoke;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+/* Heading style */
+h1 {
+    color: cadetblue;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Table header (th) styling */
+table th {
+    background-color: #097ba8;
+    color: white;
+    padding: 12px;
+    text-align: center;
+}
+
+/* Styling for table data cell */
+table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease, transform 0.3s ease-in-out;
+}
+
+/* Hover effect for rows */
+table tr:hover td {
+    background-color: #e6f2f7; 
+    transform: translateY(-5px); /* Subtle upward movement */
+}
+
+/* Remove bottom border for last row */
+table tr:last-child td {
+    border-bottom: none;
+}
